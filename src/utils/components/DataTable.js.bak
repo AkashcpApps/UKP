@@ -1,0 +1,117 @@
+import * as React from 'react';
+import { DataGrid } from '@material-ui/data-grid';
+
+
+import './DataTable.css';
+
+const columns = [
+    {
+        field: 'SNO',
+        headerName: 'Sl No.',
+        headerClassName: 'column-header',
+        width: 120,
+        editable: true,
+    },
+    {
+        field: 'structureCode',
+        headerName: 'Structure Code',
+        headerClassName: 'column-header',
+        width: 180,
+        editable: true,
+    },
+    {
+        field: 'dateOfNotification',
+        headerName: 'Date of 11(1) Notification',
+        headerClassName: 'column-header',
+        width: 250,
+        editable: true,
+    },
+    {
+        field: 'ownerName',
+        headerName: 'Owner Name',
+        headerClassName: 'column-header',
+        sortable: true,
+        width: 200,
+    }, {
+        field: 'createdOn',
+        headerName: 'Created On',
+        headerClassName: 'column-header',
+        sortable: true,
+        width: 150,
+    },
+];
+
+const rows = [
+    {
+        "id": 1,
+        "SNO": 1,
+        "structureCode": "BK/BK_BAD/BK_BAD_1/103/A, 103/B, 103/C, 103/E",
+        "dateOfNotification": "22/09/2020",
+        "ownerName": "SRISMT 1Mallappa M Ganiger 2Sangappa M Ganiger 3Geeta Etc 4Jagadisha M Ganiger",
+        "createdOn": "22/09/2020 04:22 PM"
+    },
+    {
+        "id": 2,
+        "SNO": 2,
+        "structureCode": "BK/BK_BAD/BK_BAD_1/Test1",
+        "dateOfNotification": "15/01/2021",
+        "ownerName": "Subbaiah",
+        "createdOn": "15/01/2021 11:06 AM"
+    },
+    {
+        "id": 3,
+        "SNO": 3,
+        "structureCode": "BK/BK_BAG/BK_BAG_1/00002",
+        "dateOfNotification": "18/12/2014",
+        "ownerName": "sarigamapadanisa",
+        "createdOn": "18/12/2020 07:18 PM"
+    },
+    {
+        "id": 4,
+        "SNO": 4,
+        "structureCode": "BK/BK_BAG/BK_BAG_5/1234",
+        "dateOfNotification": "23/07/2020",
+        "ownerName": "Subbaiah",
+        "createdOn": "23/07/2020 11:14 PM"
+    },
+    {
+        "id": 5,
+        "SNO": 5,
+        "structureCode": "BK/BK_BIL/BK_BIL_48/1003",
+        "dateOfNotification": "30/04/2015",
+        "ownerName": "Lakshamappa b Maitri",
+        "createdOn": "17/08/2020 04:22 PM"
+    },
+    {
+        "id": 6,
+        "SNO": 6,
+        "structureCode": "BK/BK_BIL/BK_BIL_48/1013",
+        "dateOfNotification": "30/04/2015",
+        "ownerName": "RAMAPPA T HALLI",
+        "createdOn": "11/08/2020 10:18 AM"
+    }
+];
+
+export default function DataTable() {
+    const [pageSize, setPageSize] = React.useState(20);
+
+    const handleCellDoubleClick = (event, { column, rowData, data }) => {
+        alert(rowData);
+    };
+
+    return (
+        <div style={{ height: 450, width: '100%' }}>
+            <DataGrid
+                rows={rows}
+                rowHeight={25}
+                columns={columns}
+                pageSize={pageSize}
+                onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+                rowsPerPageOptions={[10, 20, 50, 100]}
+                pagination
+                disableSelectionOnClick
+                onCellDoubleClick={ handleCellDoubleClick }
+            />
+        </div>
+    );
+}

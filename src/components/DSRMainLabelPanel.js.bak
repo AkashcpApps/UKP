@@ -1,0 +1,49 @@
+import * as React from 'react';
+import { DataGrid } from '@material-ui/data-grid';
+
+
+import './DataTable.css';
+
+const columns = [
+    {
+        field: 'code',
+        headerName: 'Code',
+        headerClassName: 'column-header',
+        width: 180,
+        editable: true,
+    },
+    {
+        field: 'description',
+        headerName: 'Description',
+        headerClassName: 'column-header',
+        width: 490,
+        editable: true,
+    }, {
+        field: 'isDsr',
+        headerName: 'isDsr',
+        headerClassName: 'column-header',
+        width: 180,
+        editable: true,
+    }, 
+];
+
+const rows = [];
+
+export default function DSRMainLabelDataTable() {
+    const [pageSize, setPageSize] = React.useState(10);
+
+    return (
+        <div style={{ height: 500, width: '100%' }}>
+            <DataGrid
+                rows={rows}
+                rowHeight={25}
+                columns={columns}
+                pageSize={pageSize}
+                onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+                rowsPerPageOptions={[10, 20, 30, 50]}
+                pagination
+                disableSelectionOnClick
+            />
+        </div>
+    );
+}

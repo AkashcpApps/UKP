@@ -1,0 +1,77 @@
+.row {
+    margin-left: 30px;
+    height: 70px;
+}
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.col-1 {
+    float: left;
+    width: 300px;
+    margin-top: 3px;
+}
+
+.col-2 {
+    float: left;
+    width: 33%;
+    margin-top: 6px;
+}
+
+.col-3 {
+    float: left;
+    width: 33%;
+    margin-top: 6px;
+}
+
+.col-small {
+    float: left;
+    width: 25%;
+}
+
+.col-remarks {
+    float: left;
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+.row-small {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 30px;
+}
+
+
+.col-small-button {
+    float: left;
+    width: 33%;
+}
+
+    .row-small:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.fixed-top-form {
+    border-style: groove;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+}
+
+.row-small-bottom-grid1 {
+    margin-left: 35px;
+    margin-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row-small-bottom-grid2 {
+    margin-left: 35px;
+    margin-right: 40px;
+}
